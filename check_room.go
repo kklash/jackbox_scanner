@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strings"
 )
 
 const (
@@ -32,6 +33,11 @@ func checkRoomCode(roomCode string) (result Result) {
 
 	if result.roomInfo, result.err = parseRoomInfo(resp.Body); result.err != nil {
 		return
+	}
+
+	// Not returned on bad response, ensure it is populated
+	if result.roomInfo.RoomCode == "" {
+		result.roomInfo.RoomCode = strings.ToUpper(roomCode)
 	}
 
 	if DEBUG {

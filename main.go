@@ -17,9 +17,9 @@ func checkRoomCodesManual(roomCodes []string) error {
 		}(i)
 	}
 
-	for _, roomCode := range roomCodes {
+	for i := 0; i < len(roomCodes); i++ {
 		result := <-channel
-		fmt.Printf("%s: ", roomCode)
+		fmt.Printf("%s: ", result.roomInfo.RoomCode)
 		if result.err != nil {
 			return result.err
 		} else if result.success {

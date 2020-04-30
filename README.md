@@ -52,3 +52,12 @@ FOUND ROOM CODE: LQJE
   "server": "ecast.jackboxgames.com"
 }
 ```
+
+If you wish to scan specific room codes, pass them as positional arguments, like so:
+
+```
+$ jackbox_scanner abbb jjsz nquf
+ABBB: EMPTY
+NQUF: **** FOUND ROOM ****
+JJSZ: EMPTY
+```
