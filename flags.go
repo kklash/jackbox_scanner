@@ -12,6 +12,7 @@ var (
 	N_WORKERS     int
 	ONLY_PLAYABLE bool
 	PASSWORDS     bool
+	GAME_FILTER   string
 
 	argv []string
 )
@@ -21,6 +22,7 @@ func init() {
 	flag.BoolVar(&FIND_FIRST, "first", false, "Terminate upon finding first valid room code.")
 	flag.BoolVar(&ONLY_PLAYABLE, "playable", false, "Only count games open to joining as players.")
 	flag.BoolVar(&PASSWORDS, "passwords", false, "Show games which are password-protected.")
+	flag.StringVar(&GAME_FILTER, "game", "", "Only show games of this game type.")
 	flag.IntVar(&N_WORKERS, "workers", 5, "Number of parallel workers checking rooms.")
 
 	flag.Parse()

@@ -18,6 +18,8 @@ $ jackbox_scanner  -h
 Usage of ./jackbox_scanner:
   -first
       Terminate upon finding first valid room code.
+  -game string
+      Only show games of this game type.
   -passwords
       Show games which are password-protected.
   -playable

@@ -38,5 +38,6 @@ func parseRoomInfo(r io.Reader) (*RoomInfo, error) {
 func isAcceptableRoomInfo(roomInfo *RoomInfo) bool {
 	return roomInfo != nil &&
 		(PASSWORDS || !roomInfo.PasswordProtected) &&
-		(!ONLY_PLAYABLE || roomInfo.JoinAs == "player")
+		(!ONLY_PLAYABLE || roomInfo.JoinAs == "player") &&
+		(len(GAME_FILTER) == 0 || roomInfo.App == GAME_FILTER)
 }
